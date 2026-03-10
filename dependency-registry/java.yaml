@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=./schema.yaml
 language: java
 dependencies:
   - group: com.google.guava
