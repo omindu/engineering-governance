@@ -1,4 +1,4 @@
-name: Dependency Registry Gatekeeper
+name: Dependency Registry PR Validator
 
 on:
   pull_request:
@@ -76,3 +76,7 @@ jobs:
       - name: Validate Go Registry
         if: needs.detect-registry-changes.outputs.go == 'true' || needs.detect-registry-changes.outputs.schema == 'true'
         run: check-jsonschema --schemafile dependency-registry/schema.yaml dependency-registry/go.yaml
+
+      - name: Validate Java Registry
+        if: needs.detect-registry-changes.outputs.java == 'true' || needs.detect-registry-changes.outputs.schema == 'true'
+        run: check-jsonschema --schemafile dependency-registry/schema.yaml dependency-registry/java.yaml
