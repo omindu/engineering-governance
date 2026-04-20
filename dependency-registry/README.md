@@ -16,7 +16,7 @@ WSO2 product repositories enforce these rules by pulling this registry during th
 
 ## Configuration Examples
 
-Each registry file must declare its `language` at the top, followed by the `dependencies` array. Use `"*"` in `allowed_scopes` to approve a dependency globally, or restrict it to specific products (e.g., `identity-server`, `apim`).
+Each registry file must declare its `language` at the top, followed by the `dependencies` array. Use `"*"` in `allowed_scopes` to approve a dependency globally, or restrict it to specific products (e.g., `identity-server`, `api-manager`).
 
 ### Go (`go.yaml`)
 Requires Go module path.
