@@ -44,7 +44,7 @@ dependencies:
       - version: "33.2.1-jre"
         allowed_scopes:
           - identity-server
-          - apim
+          - api-manager
 
   - group: com.fasterxml.jackson.core
     artifact: jackson-databind
