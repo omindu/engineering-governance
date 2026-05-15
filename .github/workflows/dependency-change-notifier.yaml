@@ -1,7 +1,7 @@
 name: Notify on Dependency Registry Change Request
 
 on:
-  pull_request:
+  pull_request_target:
     types: [opened, synchronize, reopened]
     paths:
       - 'dependency-registry/**'
@@ -20,6 +20,7 @@ jobs:
           --arg title "$PR_TITLE" \
           --arg author "$PR_AUTHOR" \
           --arg url "$PR_URL" \
+          --arg threadKey "pr-${{ github.event.pull_request.number }}" \
           '{text: ("🚨 *Dependency Registry Change Detected*\n\n📋 *PR Details:*\n• Title: " + $title + "\n• Author: @" + $author + "\n• Link: " + $url)}')
 
         curl -X POST -H 'Content-Type: application/json' \
